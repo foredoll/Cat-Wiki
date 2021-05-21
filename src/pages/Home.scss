@@ -120,11 +120,20 @@
          }
       }
       p {
-         align-self: flex-end;
-         align-items: center;
-         display: flex;
+         font-style: normal;
          cursor: pointer;
-         font-weight: 600;
+         font-weight: bold;
+         font-size: 18px;
+         justify-content: center;
+         align-items: centers;
+         display: flex;
+         /* identical to box height */
+         align-self: flex-end;
+         color: rgba(41, 21, 7, 0.6);
+         .arrow {
+            position: relative;
+            bottom: 5px;
+         }
       }
    }
 }
@@ -161,6 +170,8 @@
       border-radius: 25px;
       max-width: 250px;
       width: 100%;
+      cursor: pointer;
+
       height: 220px;
    }
    p {

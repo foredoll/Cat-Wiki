@@ -7,12 +7,17 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
+import SingleCat from "./pages/SingleCat";
 
 function App() {
    return (
       <div className="App">
          <Router>
             <Switch>
+               <Route path="/cats/:catId">
+                  <SingleCat />
+               </Route>
+
                <Route path="/">
                   <Home />
                </Route>

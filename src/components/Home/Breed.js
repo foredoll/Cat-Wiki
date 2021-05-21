@@ -1,12 +1,20 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 const Breed = ({ cats, data }) => {
-   console.log(cats);
+   let history = useHistory();
+   const goToSingleCat = () => {
+      history.push(`/cats/${cats.data[data].id}`);
+   };
    return (
-      <div className="breed__container">
+      <div>
          {cats && (
             <div className="breed__container">
-               <img src={cats.data[data].image.url} alt="" />
+               <img
+                  onClick={goToSingleCat}
+                  src={cats.data[data].image.url}
+                  alt=""
+               />
                <p>{cats.data[data].name}</p>
             </div>
          )}

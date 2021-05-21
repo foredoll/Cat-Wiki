@@ -11,16 +11,12 @@ const Breedsdiscover = () => {
    const fetchCats = async () => {
       try {
          const response = await axios
-            .get(
-               "https://api.thecatapi.com/v1/breeds?api_key=2635e2e2-9140-447d-85d6-430108ca84bf&?limit=4",
-               {
-                  headers: {
-                     "x-api-key":
-                        "2635e2e2-9140-447d-85d6-430108ca84bf",
-                     limit: "4",
-                  },
-               }
-            )
+            .get("https://api.thecatapi.com/v1/breeds", {
+               headers: {
+                  "x-api-key": "2635e2e2-9140-447d-85d6-430108ca84bf",
+                  limit: "4",
+               },
+            })
             .then((cat) => {
                setCats(cat);
             });
@@ -43,7 +39,13 @@ const Breedsdiscover = () => {
                </h2>
                <p>
                   SEE MORE{" "}
-                  {<BsArrowRight style={{ paddingLeft: "10px" }} />}{" "}
+                  {
+                     <BsArrowRight
+                        className="arrow"
+                        size={35}
+                        style={{ paddingLeft: "10px" }}
+                     />
+                  }{" "}
                </p>
             </div>
             <div className="breedsCats">
