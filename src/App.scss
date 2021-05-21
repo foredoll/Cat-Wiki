@@ -3,3 +3,32 @@
    margin: 0 auto;
    padding: 0 2%;
 }
+
+.footer__container {
+   background-color: black;
+   width: 100%;
+   position: sticky;
+   bottom: 0;
+   margin-top: 50px;
+   color: white;
+   border-radius: 15px 15px 0 0;
+   padding: 20px 70px;
+   box-sizing: border-box;
+   display: flex;
+   justify-content: space-between;
+
+   @media screen and (max-width: 768px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      img {
+         width: 155px;
+      }
+   }
+   p {
+      span {
+         text-decoration: underline;
+         font-weight: bold;
+      }
+   }
+}
