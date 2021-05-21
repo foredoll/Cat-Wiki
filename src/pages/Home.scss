@@ -10,11 +10,19 @@
    padding-bottom: 10%;
    border-radius: 35px 35px 0 0;
    margin-top: 15px;
+
    .contents {
       margin-top: 100px;
       display: flex;
+      width: 100%;
       flex-direction: column;
       margin-left: 90px;
+      @media screen and (max-width: 768px) {
+         margin-left: 2%;
+         .input {
+            width: 95% !important;
+         }
+      }
 
       .input {
          width: 394.62px;
@@ -32,7 +40,7 @@
             border-radius: 59px;
          }
          .icon {
-            right: 0;
+            right: 20px;
             top: 50%;
             transform: translate(0, -50%);
             position: absolute;
@@ -51,6 +59,9 @@
    img {
       width: 450px;
       color: white;
+      @media screen and (max-width: 768px) {
+         width: 50%;
+      }
    }
 }
 
@@ -103,6 +114,10 @@
          font-size: 48px;
          line-height: 59px;
          color: #291507;
+         @media screen and (max-width: 768px) {
+            font-size: 2rem;
+            line-height: 1;
+         }
       }
       p {
          align-self: flex-end;
