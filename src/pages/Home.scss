@@ -58,6 +58,9 @@
    width: 100%;
    background-color: #e3e1dc;
    padding-top: 15px;
+   padding-bottom: 100px;
+   margin-bottom: 100px;
+   border-radius: 0 0 35px 35px;
 
    .items {
       max-width: 1200px;
@@ -76,11 +79,13 @@
       position: relative;
       &::after {
          content: "";
-         width: 50px;
+         width: 59px;
          position: absolute;
+         border-radius: 77px;
+
          height: 3px;
          left: 0;
-         bottom: -5px;
+         bottom: -9px;
          background: #4d270c;
       }
    }
@@ -107,7 +112,7 @@
 
 .breedsCats {
    display: grid;
-   grid-template-columns: 25% 25% 25% 25%;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
    @media screen and (max-width: 768px) {
       grid-template-columns: 50% 50%;
    }
@@ -138,5 +143,83 @@
       line-height: 22px;
 
       color: #291507;
+   }
+}
+
+.why__container {
+   justify-content: space-around;
+   align-items: center;
+   display: flex;
+
+   @media screen and (max-width: 768px) {
+      flex-direction: column;
+   }
+
+   position: relative;
+   .why__left {
+      width: 40%;
+      @media screen and (max-width: 768px) {
+         width: 100%;
+      }
+      h2 {
+         &:before {
+            position: absolute;
+            content: "";
+            width: 70px;
+            height: 3px;
+            background: #4d270c;
+            border-radius: 77px;
+         }
+         font-style: normal;
+         font-weight: bold;
+         font-size: 48px;
+         line-height: 59px;
+
+         color: #291507;
+      }
+      p {
+         &:nth-of-type(1) {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+         }
+         &:nth-of-type(2) {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+            color: rgba(41, 21, 7, 0.6);
+         }
+      }
+   }
+}
+
+.why__right {
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+
+   img {
+      width: 100%;
+      max-height: 500px;
+      max-width: 300px;
+      padding: 0 10px 0 0;
+      height: 100%;
+      &:nth-of-type(2) {
+         padding: 10px 10px 0 0;
+         max-width: 200px;
+         align-self: flex-end;
+      }
+   }
+   div {
+      display: flex;
+
+      flex-direction: column;
+   }
+   > img {
+      max-width: 250px;
+      width: 200px;
+      max-height: 350px;
    }
 }
