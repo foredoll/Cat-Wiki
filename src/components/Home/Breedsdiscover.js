@@ -46,7 +46,7 @@ const Breedsdiscover = () => {
                   {<BsArrowRight style={{ paddingLeft: "10px" }} />}{" "}
                </p>
             </div>
-            <div className="breeds">
+            <div className="breedsCats">
                <Breed data="0" cats={cats}></Breed>
                <Breed data="1" cats={cats}></Breed>
                <Breed data="2" cats={cats}></Breed>
