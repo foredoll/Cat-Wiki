@@ -1,0 +1,120 @@
+.header__logo {
+   margin: 20px 0 20px 0;
+}
+.header__banner {
+   background-image: url("../images/HeroImagelg.png");
+   background-position: center center;
+   width: 100%;
+   background-size: cover;
+   display: flex;
+   padding-bottom: 10%;
+   border-radius: 35px 35px 0 0;
+   margin-top: 15px;
+   .contents {
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      margin-left: 90px;
+
+      .input {
+         width: 394.62px;
+         position: relative;
+         margin-top: 50px;
+
+         input {
+            width: 100%;
+            height: 69.67px;
+            font-size: 22px;
+            border: 0;
+            padding-left: 20px;
+            outline: 0;
+            background: #ffffff;
+            border-radius: 59px;
+         }
+         .icon {
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            position: absolute;
+         }
+      }
+   }
+   p {
+      color: #fff;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 29px;
+
+      color: #ffffff;
+   }
+   img {
+      width: 450px;
+      color: white;
+   }
+}
+
+.discover__container {
+   width: 100%;
+   background-color: #e3e1dc;
+   padding-top: 15px;
+
+   .items {
+      margin: 0 auto;
+      max-width: 1400px;
+      justify-content: space-evenly;
+      flex-direction: column;
+      display: flex;
+   }
+   h3 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+
+      color: #291507;
+      position: relative;
+      &::after {
+         content: "";
+         width: 50px;
+         position: absolute;
+         height: 3px;
+         left: 0;
+         bottom: -5px;
+         background: #4d270c;
+      }
+   }
+   .breeds {
+      display: flex;
+      justify-content: space-between;
+
+      h2 {
+         font-style: normal;
+         font-weight: bold;
+         font-size: 48px;
+         line-height: 59px;
+         color: #291507;
+      }
+      p {
+         align-self: flex-end;
+         align-items: center;
+         display: flex;
+         cursor: pointer;
+         font-weight: 600;
+      }
+   }
+}
+
+.breeds {
+   display: flex;
+   width: 100%;
+}
+.breed__container {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   img {
+      width: 100%;
+      object-fit: fill;
+   }
+}
