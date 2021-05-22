@@ -1,0 +1,48 @@
+.topBreedCats {
+   display: flex;
+   flex-direction: column;
+   img {
+      width: 100%;
+   }
+}
+.TopBreed__container {
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+   margin: 30px 0;
+   img {
+      width: 150px;
+      border-radius: 25px;
+      cursor: pointer;
+      height: 150px;
+   }
+   > div {
+      flex: 2;
+      padding-left: 52px;
+
+      h3 {
+         font-style: normal;
+         font-weight: 600;
+         cursor: pointer;
+
+         font-size: 36px;
+
+         line-height: 44px;
+         /* identical to box height */
+
+         color: #291507;
+      }
+      h2 {
+         padding-top: 15px;
+         font-style: normal;
+         cursor: pointer;
+
+         font-weight: 500;
+
+         font-size: 18px;
+         line-height: 22px;
+
+         color: #291507;
+      }
+   }
+}

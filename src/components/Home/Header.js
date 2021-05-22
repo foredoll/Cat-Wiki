@@ -3,7 +3,6 @@ import Svg from "../../images/CatwikiLogo.svg";
 const Header = () => {
    return (
       <div>
-         <img src="CatwikiLogo.svg" className="header__logo" alt="" />
          <div className="header__banner">
             <div className="contents">
                <img src={Svg} alt="" />

@@ -55,11 +55,6 @@ const SingleCat = () => {
       <div>
          {cat && (
             <div>
-               <img
-                  src="/CatwikiLogo.svg"
-                  className="header__logo"
-                  alt=""
-               />
                <div className="singleCat__container">
                   {catImage && <img src={catImage.url} alt="" />}
                   <div className="singleCat__info">
