@@ -14,7 +14,7 @@ function App() {
       <div className="App">
          <Router>
             <Switch>
-               <Route path="/cats/:catId">
+               <Route path="/cats/:catName/:catId">
                   <SingleCat />
                </Route>
 

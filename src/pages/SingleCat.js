@@ -1,11 +1,16 @@
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-
+import "./SingleCat.scss";
+import CatInfoComponent from "../components/SingleCat/CatInfoComponent";
 const SingleCat = () => {
-   const [cats, setCats] = useState("");
+   const [cat, setCat] = useState("");
    const [catImage, setCatImage] = useState("");
 
+   let params = useParams("catId");
+   let catName = params.catName;
+   let catId = params.catId;
+   const [time, setTime] = useState(false);
    const fetchCatImage = async () => {
       try {
          const response = await axios
@@ -14,6 +19,7 @@ const SingleCat = () => {
             )
             .then((catImage) => {
                setCatImage(catImage.data[0]);
+               console.log(catImage);
             });
       } catch (error) {
          console.log(error);
@@ -24,7 +30,7 @@ const SingleCat = () => {
       try {
          const response = await axios
             .get(
-               `https://api.thecatapi.com/v1/breeds/search?q=${catId}`,
+               `https://api.thecatapi.com/v1/breeds/search?q=${catName}`,
                {
                   headers: {
                      "x-api-key":
@@ -33,8 +39,7 @@ const SingleCat = () => {
                }
             )
             .then((cat) => {
-               setCats(cat.data[0]);
-               console.log(cats);
+               setCat(cat.data[0]);
             });
       } catch (error) {
          console.log(error);
@@ -45,18 +50,89 @@ const SingleCat = () => {
       fetchCatImage();
       fetchCats();
    }, []);
-   let catId = useParams("catId").catId;
-   console.log(catId.catId);
+
    return (
       <div>
-         <img
-            src="/CatwikiLogo.svg"
-            className="header__logo"
-            alt=""
-         />
-         <div className="singleCat__container">
-            {catImage && <img src={catImage.url} alt="" />}
-         </div>
+         {cat && (
+            <div>
+               <img
+                  src="/CatwikiLogo.svg"
+                  className="header__logo"
+                  alt=""
+               />
+               <div className="singleCat__container">
+                  {catImage && <img src={catImage.url} alt="" />}
+                  <div className="singleCat__info">
+                     <h2 className="name">{cat.name}</h2>
+                     <h3 className="description">
+                        {cat.description}
+                     </h3>
+                     <CatInfoComponent
+                        catId={catId}
+                        catName={catName}
+                        name="Temperament"
+                        simple={cat.temperament}
+                     />
+                     <CatInfoComponent
+                        catId={catId}
+                        catName={catName}
+                        name="Origin"
+                        simple={cat.origin}
+                     />
+                     <CatInfoComponent
+                        catId={catId}
+                        catName={catName}
+                        name="Life Span"
+                        simple={cat.life_span}
+                     />
+                     <CatInfoComponent
+                        catId={catId}
+                        catName={catName}
+                        name="Affection level"
+                        graph={cat.adaptability}
+                     />
+                     <CatInfoComponent
+                        catId={catId}
+                        catName={catName}
+                        name="Child Friendly"
+                        graph={cat.child_friendly}
+                     />
+                     <CatInfoComponent
+                        catId={catId}
+                        catName={catName}
+                        name="Grooming"
+                        graph={cat.grooming}
+                     />
+                     <CatInfoComponent
+                        catId={catId}
+                        catName={catName}
+                        name="Inteligence"
+                        graph={cat.intelligence}
+                     />
+
+                     <CatInfoComponent
+                        catId={catId}
+                        catName={catName}
+                        name="Health issues"
+                        graph={cat.health_issues}
+                     />
+                     <CatInfoComponent
+                        catId={catId}
+                        catName={catName}
+                        name="Social needs"
+                        graph={cat.social_needs}
+                     />
+                     <CatInfoComponent
+                        catId={catId}
+                        catName={catName}
+                        name="Stranger friendly"
+                        graph={cat.stranger_friendly}
+                     />
+                  </div>
+               </div>
+               <h2>Others photos</h2>
+            </div>
+         )}
       </div>
    );
 };

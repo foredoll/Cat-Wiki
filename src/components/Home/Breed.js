@@ -4,7 +4,9 @@ import { useHistory } from "react-router-dom";
 const Breed = ({ cats, data }) => {
    let history = useHistory();
    const goToSingleCat = () => {
-      history.push(`/cats/${cats.data[data].id}`);
+      history.push(
+         `/cats/${cats.data[data].name}/${cats.data[data].id}`
+      );
    };
    return (
       <div>
