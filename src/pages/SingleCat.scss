@@ -23,6 +23,7 @@
          object-fit: fill;
          height: 100%;
          border-radius: 35px;
+         max-height: 280px;
          padding: 10px;
       }
    }
@@ -131,16 +132,5 @@
          border-radius: 8px;
          display: inline-block;
       }
-   }
-}
-
-.otherImages {
-   display: flex;
-   width: 100%;
-   img {
-      max-width: 300px;
-      border-radius: 25px;
-      width: 240px;
-      height: 220px;
    }
 }

@@ -28,6 +28,7 @@ const Home = () => {
    };
 
    useEffect(() => {
+      document.title = "Wiki Cat - Home";
       fetchCats();
    }, []);
    return (

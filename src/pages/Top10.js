@@ -30,6 +30,7 @@ const Top10 = () => {
    };
 
    useEffect(() => {
+      document.title = "Wiki Cat - Top 10 ";
       fetchCats();
    }, []);
    return (

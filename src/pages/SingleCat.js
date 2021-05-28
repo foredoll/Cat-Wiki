@@ -77,6 +77,7 @@ const SingleCat = () => {
    };
 
    useEffect(() => {
+      document.title = `Cat Wiki - ${catName}`;
       fetchCatImage();
       fetchCatsImages();
       fetchCats();
