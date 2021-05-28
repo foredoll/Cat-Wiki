@@ -119,20 +119,36 @@
             line-height: 1;
          }
       }
-      p {
+      .breedsLink {
+         &:hover {
+            color: white;
+            background-color: rgba(41, 21, 7, 0.6);
+            .arrow {
+               color: white;
+            }
+         }
+         &:not(:hover) {
+            transition: all 250ms;
+            background-color: white;
+
+            color: rgba(41, 21, 7, 0.6);
+         }
          font-style: normal;
          cursor: pointer;
          font-weight: bold;
          font-size: 18px;
          justify-content: center;
-         align-items: centers;
+         text-decoration: none;
+         align-items: center;
+         padding: 3px 12px;
+         background-color: white;
+         border: 1px solid black;
          display: flex;
          /* identical to box height */
          align-self: flex-end;
          color: rgba(41, 21, 7, 0.6);
          .arrow {
             position: relative;
-            bottom: 5px;
          }
       }
    }
@@ -185,6 +201,7 @@
 }
 
 .why__container {
+   padding-bottom: 150px;
    justify-content: space-around;
    align-items: center;
    display: flex;

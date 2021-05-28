@@ -1,33 +1,10 @@
-import { useEffect } from "react";
 import { BsArrowRight } from "react-icons/bs";
-import axios from "axios";
-import { useState } from "react";
 import Breed from "./Breed";
+import { Link } from "react-router-dom";
 
 // Make a request for a user with a given ID
 
-const Breedsdiscover = () => {
-   const [cats, setCats] = useState("");
-   const fetchCats = async () => {
-      try {
-         const response = await axios
-            .get("https://api.thecatapi.com/v1/breeds", {
-               headers: {
-                  "x-api-key": "2635e2e2-9140-447d-85d6-430108ca84bf",
-                  limit: "4",
-               },
-            })
-            .then((cat) => {
-               setCats(cat);
-            });
-      } catch (error) {
-         console.log(error);
-      }
-   };
-
-   useEffect(() => {
-      fetchCats();
-   }, []);
+const Breedsdiscover = ({ cats }) => {
    return (
       <div className="discover__container">
          <div className="items">
@@ -37,7 +14,7 @@ const Breedsdiscover = () => {
                   66+ Breeds For you
                   <br /> to discover
                </h2>
-               <p>
+               <Link to="/top10" className="breedsLink">
                   SEE MORE{" "}
                   {
                      <BsArrowRight
@@ -46,7 +23,7 @@ const Breedsdiscover = () => {
                         style={{ paddingLeft: "10px" }}
                      />
                   }{" "}
-               </p>
+               </Link>
             </div>
             <div className="breedsCats">
                <Breed data="0" cats={cats}></Breed>
