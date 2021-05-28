@@ -12,7 +12,7 @@ const Breedsdiscover = ({ cats }) => {
             <div className="breeds">
                <h2>
                   66+ Breeds For you
-                  <br /> to discover
+                  {window.innerWidth > 768 && <br />} to discover
                </h2>
                <Link to="/top10" className="breedsLink">
                   SEE MORE{" "}

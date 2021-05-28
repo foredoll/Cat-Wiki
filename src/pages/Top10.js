@@ -9,6 +9,7 @@ import Breed from "../components/Home/Breed.js";
 
 const Top10 = () => {
    const [cats, setCats] = useState("");
+   const [isLoading, setIsLoading] = useState(true);
    const fetchCats = async () => {
       try {
          const response = await axios
@@ -20,6 +21,7 @@ const Top10 = () => {
             })
             .then((cat) => {
                setCats(cat);
+               setIsLoading(false);
             });
       } catch (error) {
          console.log(error);
@@ -31,22 +33,28 @@ const Top10 = () => {
    }, []);
    return (
       <div className="top__container">
-         <div className="items">
-            <h1>Top 10 most searched breeds</h1>
-            <div className="breeds"></div>
-            <div className="topBreedCats">
-               <Breed data="0" top="true" cats={cats}></Breed>
-               <Breed data="1" top="true" cats={cats}></Breed>
-               <Breed data="2" top="true" cats={cats}></Breed>
-               <Breed data="4" top="true" cats={cats}></Breed>
-               <Breed data="5" top="true" cats={cats}></Breed>
-               <Breed data="6" top="true" cats={cats}></Breed>
-               <Breed data="7" top="true" cats={cats}></Breed>
-               <Breed data="8" top="true" cats={cats}></Breed>
-               <Breed data="9" top="true" cats={cats}></Breed>
-               <Breed data="10" top="true" cats={cats}></Breed>
+         {isLoading ? (
+            <div className="loadingContainer">
+               <img src="/loading.gif" alt="loading" />
             </div>
-         </div>
+         ) : (
+            <div className="items">
+               <h1>Top 10 most searched breeds</h1>
+               <div className="breeds"></div>
+               <div className="topBreedCats">
+                  <Breed data="0" top="true" cats={cats}></Breed>
+                  <Breed data="1" top="true" cats={cats}></Breed>
+                  <Breed data="2" top="true" cats={cats}></Breed>
+                  <Breed data="4" top="true" cats={cats}></Breed>
+                  <Breed data="5" top="true" cats={cats}></Breed>
+                  <Breed data="6" top="true" cats={cats}></Breed>
+                  <Breed data="7" top="true" cats={cats}></Breed>
+                  <Breed data="8" top="true" cats={cats}></Breed>
+                  <Breed data="9" top="true" cats={cats}></Breed>
+                  <Breed data="10" top="true" cats={cats}></Breed>
+               </div>
+            </div>
+         )}
       </div>
    );
 };

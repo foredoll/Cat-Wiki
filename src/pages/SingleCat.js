@@ -11,6 +11,8 @@ const SingleCat = () => {
    let catName = params.catName;
    let catId = params.catId;
    const [time, setTime] = useState(false);
+   const [isLoading, setIsLoading] = useState(true);
+   const [isLoading1, setIsLoading1] = useState(true);
    const fetchCatImage = async () => {
       try {
          const response = await axios
@@ -19,6 +21,7 @@ const SingleCat = () => {
             )
             .then((catImage) => {
                setCatImage(catImage.data[0]);
+               setIsLoading(false);
                console.log(catImage);
             });
       } catch (error) {
@@ -40,6 +43,7 @@ const SingleCat = () => {
             )
             .then((cat) => {
                setCat(cat.data[0]);
+               setIsLoading1(false);
             });
       } catch (error) {
          console.log(error);
@@ -53,7 +57,11 @@ const SingleCat = () => {
 
    return (
       <div>
-         {cat && (
+         {isLoading && isLoading1 ? (
+            <div className="loadingContainer">
+               <img src="/loading.gif" alt="loading" />
+            </div>
+         ) : (
             <div>
                <div className="singleCat__container">
                   {catImage && <img src={catImage.url} alt="" />}

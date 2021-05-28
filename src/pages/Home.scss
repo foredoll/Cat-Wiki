@@ -107,6 +107,15 @@
    .breeds {
       display: flex;
       justify-content: space-between;
+      @media screen and(max-width:768px) {
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         .breedsLink {
+            margin-top: 15px;
+            align-self: initial !important;
+         }
+      }
 
       h2 {
          font-style: normal;
@@ -137,14 +146,13 @@
          cursor: pointer;
          font-weight: bold;
          font-size: 18px;
-         justify-content: center;
          text-decoration: none;
          align-items: center;
          padding: 3px 12px;
          background-color: white;
          border: 1px solid black;
          display: flex;
-         /* identical to box height */
+
          align-self: flex-end;
          color: rgba(41, 21, 7, 0.6);
          .arrow {

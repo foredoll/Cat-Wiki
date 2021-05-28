@@ -13,8 +13,14 @@ import Top10 from "./pages/Top10";
 function App() {
    return (
       <div className="App">
-         <img src="CatwikiLogo.svg" className="header__logo" alt="" />
          <Router>
+            <Link to="/">
+               <img
+                  src="/CatwikiLogo.svg"
+                  className="header__logo"
+                  alt=""
+               />
+            </Link>
             <Switch>
                <Route path="/cats/:catName/:catId">
                   <SingleCat />

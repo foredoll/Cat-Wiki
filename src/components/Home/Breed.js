@@ -1,13 +1,27 @@
 import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 const Breed = ({ cats, data, top }) => {
    let history = useHistory();
+
    const goToSingleCat = () => {
       history.push(
          `/cats/${cats.data[data].name}/${cats.data[data].id}`
       );
    };
+   function truncateString(str, num) {
+      if (str.length <= num) {
+         return str;
+      }
+      if (window.innerWidth < 768) {
+         return str.slice(0, num) + "...";
+      }
+      return str;
+   }
+
+   useEffect(() => {});
    return (
       <div>
          {cats && !top && (
@@ -20,7 +34,6 @@ const Breed = ({ cats, data, top }) => {
                <p>{cats.data[data].name}</p>
             </div>
          )}
-
          {top && cats && (
             <div className="TopBreed__container">
                <img
@@ -32,8 +45,11 @@ const Breed = ({ cats, data, top }) => {
                   <h3 onClick={goToSingleCat}>
                      {data}. {cats.data[data].name}
                   </h3>
-                  <h2 onClick={goToSingleCat}>
-                     {cats.data[data].description}
+                  <h2 className="truncate" onClick={goToSingleCat}>
+                     {truncateString(
+                        cats.data[data].description,
+                        150
+                     )}
                   </h2>
                </div>
             </div>
