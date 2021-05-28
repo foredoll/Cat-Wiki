@@ -43,16 +43,66 @@ const Top10 = () => {
                <h1>Top 10 most searched breeds</h1>
                <div className="breeds"></div>
                <div className="topBreedCats">
-                  <Breed data="0" top="true" cats={cats}></Breed>
-                  <Breed data="1" top="true" cats={cats}></Breed>
-                  <Breed data="2" top="true" cats={cats}></Breed>
-                  <Breed data="4" top="true" cats={cats}></Breed>
-                  <Breed data="5" top="true" cats={cats}></Breed>
-                  <Breed data="6" top="true" cats={cats}></Breed>
-                  <Breed data="7" top="true" cats={cats}></Breed>
-                  <Breed data="8" top="true" cats={cats}></Breed>
-                  <Breed data="9" top="true" cats={cats}></Breed>
-                  <Breed data="10" top="true" cats={cats}></Breed>
+                  <Breed
+                     num="1"
+                     data="64"
+                     top="true"
+                     cats={cats}
+                  ></Breed>
+                  <Breed
+                     num="2"
+                     data="45"
+                     top="true"
+                     cats={cats}
+                  ></Breed>
+                  <Breed
+                     num="3"
+                     data="54"
+                     top="true"
+                     cats={cats}
+                  ></Breed>
+                  <Breed
+                     num="4"
+                     data="23"
+                     top="true"
+                     cats={cats}
+                  ></Breed>
+                  <Breed
+                     num="5"
+                     data="2"
+                     top="true"
+                     cats={cats}
+                  ></Breed>
+                  <Breed
+                     num="6"
+                     data="34"
+                     top="true"
+                     cats={cats}
+                  ></Breed>
+                  <Breed
+                     num="7"
+                     data="4"
+                     top="true"
+                     cats={cats}
+                  ></Breed>
+                  <Breed
+                     num="8"
+                     data="24"
+                     top="true"
+                     cats={cats}
+                  ></Breed>
+                  <Breed
+                     num="9"
+                     data="12"
+                     top="true"
+                     cats={cats}
+                  ></Breed>
+                  <Breed
+                     num="10"
+                     data="1"
+                     top="true"
+                     cats={cats}
+                  ></Breed>
                </div>
             </div>
          )}

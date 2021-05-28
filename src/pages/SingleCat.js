@@ -14,6 +14,8 @@ const SingleCat = () => {
    let catId = params.catId;
    const [isLoading, setIsLoading] = useState(true);
    const [isLoading1, setIsLoading1] = useState(true);
+   const [isLoading2, setIsLoading2] = useState(true);
+   const [carregando, setCarregando] = useState(true);
    const fetchCatImage = async () => {
       try {
          const response = await axios
@@ -48,11 +50,17 @@ const SingleCat = () => {
          console.log(error);
       }
    };
+   useEffect(() => {
+      console.log("abc");
+      if (!isLoading && !isLoading1 && !isLoading2) {
+         setCarregando(false);
+      }
+   }, [isLoading, isLoading1, isLoading2]);
    const fetchCatsImages = async () => {
       try {
          const response = await axios
             .get(
-               `https://api.thecatapi.com/v1/images/search?breed_ids=${catId}&include_breeds=true&limit=10`,
+               `https://api.thecatapi.com/v1/images/search?breed_ids=${catId}&include_breeds=true&limit=8`,
                {
                   headers: {
                      "x-api-key": API_KEY,
@@ -61,7 +69,7 @@ const SingleCat = () => {
             )
             .then((cat) => {
                setCatImages(cat);
-               setIsLoading1(false);
+               setIsLoading2(false);
             });
       } catch (error) {
          console.log(error);
@@ -76,7 +84,7 @@ const SingleCat = () => {
 
    return (
       <div>
-         {isLoading && isLoading1 ? (
+         {carregando ? (
             <div className="loadingContainer">
                <img src="/loading.gif" alt="loading" />
             </div>

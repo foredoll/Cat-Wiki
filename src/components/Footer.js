@@ -8,11 +8,7 @@ const Footer = () => {
             <Link to="/">
                <img src={Svg} alt="" />
             </Link>
-            <p>
-               © created by Gilamastra{" "}
-               <span className="footer__span"></span> -
-               devChallenge.io 2021
-            </p>
+            <p>© created by Gilamastra devChallenge.io 2021</p>
          </div>
       </div>
    );

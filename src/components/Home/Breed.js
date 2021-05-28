@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-const Breed = ({ cats, data, top }) => {
+const Breed = ({ cats, data, top, num }) => {
    let history = useHistory();
 
    const goToSingleCat = () => {
@@ -42,7 +42,7 @@ const Breed = ({ cats, data, top }) => {
                />
                <div>
                   <h3 onClick={goToSingleCat}>
-                     {data}. {cats.data[data].name}
+                     {num}. {cats.data[data].name}
                   </h3>
                   <h2 className="truncate" onClick={goToSingleCat}>
                      {truncateString(
