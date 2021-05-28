@@ -21,21 +21,15 @@ const CatInfoComponent = ({ simple, name, graph }) => {
 
             <div className="simple__container">
                {graph && name && <h2 className="simple">{name}:</h2>}
-               {graph &&
-                  obj.map((numero) => {
-                     return (
-                        <div className="graphs">
-                           <span className="graph"> </span>
-                        </div>
-                     );
+               <div className="graphs">
+                  {graph &&
+                     obj.map((numero) => {
+                        return <span className="graph"> </span>;
+                     })}
+                  {graphObj.map((numero) => {
+                     return <span className="graph-white"></span>;
                   })}
-               {graphObj.map((numero) => {
-                  return (
-                     <div className="graphs">
-                        <span className="graph-white"></span>
-                     </div>
-                  );
-               })}
+               </div>
             </div>
          </div>
       </div>

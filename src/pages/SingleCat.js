@@ -7,6 +7,7 @@ import { API_KEY } from "../API_KEY";
 const SingleCat = () => {
    const [cat, setCat] = useState("");
    const [catImage, setCatImage] = useState("");
+   const [catImages, setCatImages] = useState("");
 
    let params = useParams("catId");
    let catName = params.catName;
@@ -47,9 +48,29 @@ const SingleCat = () => {
          console.log(error);
       }
    };
+   const fetchCatsImages = async () => {
+      try {
+         const response = await axios
+            .get(
+               `https://api.thecatapi.com/v1/images/search?breed_ids=${catId}&include_breeds=true&limit=10`,
+               {
+                  headers: {
+                     "x-api-key": API_KEY,
+                  },
+               }
+            )
+            .then((cat) => {
+               setCatImages(cat);
+               setIsLoading1(false);
+            });
+      } catch (error) {
+         console.log(error);
+      }
+   };
 
    useEffect(() => {
       fetchCatImage();
+      fetchCatsImages();
       fetchCats();
    }, []);
 
@@ -60,7 +81,7 @@ const SingleCat = () => {
                <img src="/loading.gif" alt="loading" />
             </div>
          ) : (
-            <div>
+            <div className="singleCat">
                <div className="singleCat__container">
                   {catImage && <img src={catImage.url} alt="" />}
                   <div className="singleCat__info">
@@ -132,6 +153,14 @@ const SingleCat = () => {
                   </div>
                </div>
                <h2>Others photos</h2>
+               <div className="imageContainer">
+                  {catImages &&
+                     catImages.data.map((cat) => {
+                        console.log(cat, "cat");
+                        return <img src={cat.url} alt="" />;
+                     })}
+               </div>
+               ;
             </div>
          )}
       </div>

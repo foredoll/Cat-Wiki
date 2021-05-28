@@ -1,8 +1,36 @@
+.singleCat {
+   padding-bottom: 150px;
+   width: 100%;
+   margin: 0 auto;
+   .imageContainer {
+      margin-top: 33px;
+      width: 100%;
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: 0.85fr 0.85fr 0.85fr 0.85fr;
+      grid-template-rows: 1fr 1fr;
+      align-items: center;
+      justify-items: center;
+      @media screen and (max-width: 1024px) {
+         grid-template-columns: 0.85fr 0.85fr;
+         max-width: 700px;
+         margin: 0 auto;
+         grid-template-rows: 1fr 1fr 1fr;
+      }
+      img {
+         max-width: 400px;
+         width: 100%;
+         object-fit: fill;
+         height: 100%;
+         border-radius: 35px;
+         padding: 10px;
+      }
+   }
+}
 .singleCat__container {
    display: flex;
    width: 100%;
    justify-content: space-evenly;
-   padding-bottom: 100px;
    @media screen and (max-width: 768px) {
       flex-direction: column;
       justify-content: center !important;
@@ -22,7 +50,6 @@
    }
    .singleCat__info {
       width: 50%;
-
       .name {
          font-style: normal;
          font-weight: 600;
@@ -45,8 +72,13 @@
 
          .simple__container {
             display: flex;
+            @media screen and (max-width: 968px) {
+               flex-direction: column !important;
+               justify-content: center;
+               align-items: center;
+            }
             .simple {
-               width: 140px;
+               width: 150px;
             }
          }
       }
@@ -66,7 +98,17 @@
 }
 
 .graphs {
+   @media screen and (max-width: 768px) {
+      display: flex;
+      .graph,
+      .graph-white {
+         margin-top: 10px;
+         padding-top: 15px;
+      }
+   }
    .graph {
+      display: inline-block;
+
       &::before {
          content: "   ";
          width: 60px;
@@ -78,11 +120,13 @@
       }
    }
    .graph-white {
+      display: inline-block;
+
       &::before {
          content: "   ";
          width: 60px;
          height: 12px;
-         background: #e0e0e0;
+         background: #dadada;
          margin: 0 5px;
          border-radius: 8px;
          display: inline-block;
