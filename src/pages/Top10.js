@@ -1,21 +1,22 @@
 import { useEffect } from "react";
 import "./Top10.scss";
-import { BsArrowRight } from "react-icons/bs";
 import axios from "axios";
 import { useState } from "react";
 import Breed from "../components/Home/Breed.js";
+import { API_KEY } from "../API_KEY";
 
 // Make a request for a user with a given ID
 
 const Top10 = () => {
    const [cats, setCats] = useState("");
    const [isLoading, setIsLoading] = useState(true);
+
    const fetchCats = async () => {
       try {
          const response = await axios
             .get("https://api.thecatapi.com/v1/breeds", {
                headers: {
-                  "x-api-key": "2635e2e2-9140-447d-85d6-430108ca84bf",
+                  "x-api-key": API_KEY,
                   limit: "4",
                },
             })

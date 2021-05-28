@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import "./SingleCat.scss";
 import CatInfoComponent from "../components/SingleCat/CatInfoComponent";
+import { API_KEY } from "../API_KEY";
 const SingleCat = () => {
    const [cat, setCat] = useState("");
    const [catImage, setCatImage] = useState("");
@@ -10,7 +11,6 @@ const SingleCat = () => {
    let params = useParams("catId");
    let catName = params.catName;
    let catId = params.catId;
-   const [time, setTime] = useState(false);
    const [isLoading, setIsLoading] = useState(true);
    const [isLoading1, setIsLoading1] = useState(true);
    const fetchCatImage = async () => {
@@ -22,7 +22,6 @@ const SingleCat = () => {
             .then((catImage) => {
                setCatImage(catImage.data[0]);
                setIsLoading(false);
-               console.log(catImage);
             });
       } catch (error) {
          console.log(error);
@@ -36,8 +35,7 @@ const SingleCat = () => {
                `https://api.thecatapi.com/v1/breeds/search?q=${catName}`,
                {
                   headers: {
-                     "x-api-key":
-                        "2635e2e2-9140-447d-85d6-430108ca84bf",
+                     "x-api-key": API_KEY,
                   },
                }
             )

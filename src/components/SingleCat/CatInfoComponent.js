@@ -1,13 +1,4 @@
-import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react";
-const CatInfoComponent = ({
-   simple,
-   name,
-   graph,
-   catId,
-   catName,
-}) => {
+const CatInfoComponent = ({ simple, name, graph }) => {
    let white = 5;
    let graphNums = white - graph;
    const obj = [];
@@ -40,7 +31,7 @@ const CatInfoComponent = ({
                   })}
                {graphObj.map((numero) => {
                   return (
-                     <div class="graphs">
+                     <div className="graphs">
                         <span className="graph-white"></span>
                      </div>
                   );
