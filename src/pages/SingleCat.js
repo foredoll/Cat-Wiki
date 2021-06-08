@@ -17,7 +17,7 @@ const SingleCat = () => {
    const [carregando, setCarregando] = useState(true);
    const fetchCatImage = async () => {
       try {
-         const response = await axios
+         await axios
             .get(
                `https://api.thecatapi.com/v1/images/search?breed_ids=${catId}`
             )
@@ -32,7 +32,7 @@ const SingleCat = () => {
 
    const fetchCats = async () => {
       try {
-         const response = await axios
+         await axios
             .get(
                `https://api.thecatapi.com/v1/breeds/search?q=${catName}`)
             .then((cat) => {
@@ -51,7 +51,7 @@ const SingleCat = () => {
    }, [isLoading, isLoading1, isLoading2]);
    const fetchCatsImages = async () => {
       try {
-         const response = await axios
+         await axios
             .get(
                `https://api.thecatapi.com/v1/images/search?breed_ids=${catId}&include_breeds=true&limit=8`
             )
