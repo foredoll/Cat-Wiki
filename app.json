@@ -1,17 +1,3 @@
 {
-  "name": "Cat-Wiki",
-  "description": "",
-  "repository": "https://github.com/foredoll/Cat-Wiki/",
-  "logo": "https://raw.githubusercontent.com/benbusby/whoogle-search/master/app/static/img/favicon/ms-icon-150x150.png",
-  "keywords": [
-    "search",
-    "metasearch",
-    "flask",
-    "docker",
-    "heroku",
-    "adblock",
-    "degoogle",
-    "privacy"
-  ],
-  "stack": "container",
+  "name": "cat-wiki",
 }
