@@ -10,7 +10,7 @@ const Home = () => {
    const [isLoading, setIsLoading] = useState(true);
    const fetchCats = async () => {
       try {
-         const response = await axios
+         await axios
             .get("https://api.thecatapi.com/v1/breeds", {
                headers: {
                   limit: "4",
