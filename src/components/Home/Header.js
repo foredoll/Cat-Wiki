@@ -5,18 +5,12 @@ import { BsSearch } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Svg from "../../images/CatwikiLogo.svg";
 const Header = ({ cats }) => {
-   const [catsState, setCatsState] = useState(cats.data);
+   const [catsState] = useState(cats.data);
    const [inputValue, setInputValue] = useState("");
    const inputRef = useRef("");
    const [isMenuOpen, setIsMenuOpen] = useState(false);
    console.log(catsState);
-
-   const fetchCatsByInput = (e) => {
-      let catsFiltered = catsState.filter((cat) => {
-         return cat.name.toLowerCase() in e.target.value;
-      });
-      console.log(catsFiltered);
-   };
+   
    useEffect(() => {
       window.addEventListener("click", (e) => {
          if (
