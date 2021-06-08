@@ -3,7 +3,6 @@ import "./Top10.scss";
 import axios from "axios";
 import { useState } from "react";
 import Breed from "../components/Home/Breed.js";
-import { API_KEY } from "../API_KEY";
 
 // Make a request for a user with a given ID
 
@@ -16,7 +15,6 @@ const Top10 = () => {
          const response = await axios
             .get("https://api.thecatapi.com/v1/breeds", {
                headers: {
-                  "x-api-key": API_KEY,
                   limit: "4",
                },
             })
