@@ -53,12 +53,7 @@ const SingleCat = () => {
       try {
          const response = await axios
             .get(
-               `https://api.thecatapi.com/v1/images/search?breed_ids=${catId}&include_breeds=true&limit=8`,
-               {
-                  headers: {
-                     "x-api-key": API_KEY,
-                  },
-               }
+               `https://api.thecatapi.com/v1/images/search?breed_ids=${catId}&include_breeds=true&limit=8`
             )
             .then((cat) => {
                setCatImages(cat);
