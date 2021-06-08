@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { API_KEY } from "../API_KEY";
 import Breedsdiscover from "../components/Home/Breedsdiscover";
 import Header from "../components/Home/Header";
 import WhyShould from "../components/Home/WhyShould";
@@ -14,7 +13,6 @@ const Home = () => {
          const response = await axios
             .get("https://api.thecatapi.com/v1/breeds", {
                headers: {
-                  "x-api-key": API_KEY,
                   limit: "4",
                },
             })
